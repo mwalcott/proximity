@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cbb790b4a262bdff61072a0c18acdf3a",
-    "content-hash": "7e71fff5dc02cf26a6f2712b25091b8b",
+    "hash": "62c531f7314518969ef9693ca01184be",
+    "content-hash": "3b001ce3884072267a21bf53d25bb013",
     "packages": [
         {
             "name": "composer/installers",
@@ -522,6 +522,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/optimizely/"
+        },
+        {
+            "name": "wpackagist-plugin/password-protected",
+            "version": "2.0.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/password-protected/",
+                "reference": "tags/2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/password-protected.2.0.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/password-protected/"
         },
         {
             "name": "wpackagist-plugin/password-strength-for-woocommerce",

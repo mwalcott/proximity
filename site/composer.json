@@ -48,6 +48,7 @@
     "wpackagist-plugin/optimizely": "3.7.5",
     "wpackagist-plugin/password-strength-for-woocommerce": "1.0.1",
     "wpackagist-plugin/duplicate-post": "3.1.2",
+    "wpackagist-plugin/password-protected": "2.0.3",
     "roots/soil": "3.7.0"
   },
   "require-dev": {
