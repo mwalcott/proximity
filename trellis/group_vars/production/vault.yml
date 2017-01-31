@@ -10,15 +10,15 @@ vault_users:
 # Variables to accompany `group_vars/production/wordpress_sites.yml`
 # Note: the site name (`example.com`) must match up with the site name in the above file.
 vault_wordpress_sites:
-  example.com:
+  proximitydatalabs.com:
     env:
       db_password: example_dbpassword
       # Generate your keys here: https://roots.io/salts.html
-      auth_key: "generateme"
-      secure_auth_key: "generateme"
-      logged_in_key: "generateme"
-      nonce_key: "generateme"
-      auth_salt: "generateme"
-      secure_auth_salt: "generateme"
-      logged_in_salt: "generateme"
-      nonce_salt: "generateme"
+      auth_key: "xDWSb0493xw&q/o%&7QZ-E{RGTIAV,j[s^.u>b[^ZqM$;8::Sy$;!6nUe,n0oVuZ"
+      secure_auth_key: "IsZ{Z@*UWDu)dU$8dNl)nONmwB4sS#*9>5/hF*)G$E2w)/)}n_UI}Gm75+w)Xv_-"
+      logged_in_key: "OL#b?{*,-q;c/Ew!-T:=HhEPibT+kh_7vzUz!|.]EMCskARHzNPf=Tmyyf3g6$>^"
+      nonce_key: "045mku@HGb.0DrH2N0P1uXr@BZ@NG44tlzPHWaOVGy4#0^N:y[J,#jGZ54]@zaKo"
+      auth_salt: "mQjCl8tN]RNtCGwm]=1>a[kH7B=vHJ1YXigFl4Gh/ji[jDn3&!]O)_qr8Q!j[h(u"
+      secure_auth_salt: "1gmsI]|LD@RN}chIp-$y)gFo9+&_yHn#LiS*G(a/WE;C9.2@k]p,#UeqyA]q]XKA"
+      logged_in_salt: "xfkbw#=c2b7q@2w0u@x%1W8zo7,g&0PlZ]1!&h3-BX!6t#ZOY>0%0T1%]Xe4R_Vi"
+      nonce_salt: "E|-zA;Xi6ZRAJpD)}{6{bp@^otDnqV[R*#9,T<(51;z8}9q4kC]87!RQevNDh{B["
