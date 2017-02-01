@@ -19,6 +19,9 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <div class="wrap container-fluid" role="document">
+	    <?php if( is_front_page() ) { ?>
+				<?= PDL\homeBanner(); ?>
+	    <?php } ?>
       <div class="content row">
         <main class="main">
           <?php include Wrapper\template_path(); ?>

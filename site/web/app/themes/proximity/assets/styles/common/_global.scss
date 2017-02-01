@@ -1,3 +1,8 @@
+body {
+	font-family: 'ff-dagny-web-pro', sans-serif;
+}
 .wrap {
-	margin-left: 250px;
+	@include media-breakpoint-up(md) {
+		margin-left: 200px;
+	}
 }
