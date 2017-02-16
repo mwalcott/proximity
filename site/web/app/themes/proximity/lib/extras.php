@@ -78,29 +78,105 @@ function social() {
 	
 }
 
-function homeBanner() {
-	if( have_rows('verticals') ):
-		echo '<div class="call-to-action row" style="background-image: url('. get_field('hb_background_image') .');">';
-			echo '<div class="cta-content">';
-				echo '<div class="row vert-wrap">';		
-					while ( have_rows('verticals') ) : the_row(); ?>
-						<div class="col-sm-4">
-							<div class="vert-inner" style="background-image: url(<?php the_sub_field('vert_background_image'); ?>);">
-								<h2><?php the_sub_field('vert_heading'); ?></h2>
-								<?php the_sub_field('vert_short_description'); ?>
-								<a href="<?php the_sub_field('vert_button_url'); ?>" target="_blank" class="btn btn-primary">
-									<?php the_sub_field('vert_button_text'); ?>	
-								</a>
-							</div>
-						</div>
-					<?php endwhile;
-				echo '</div>';
-			echo '</div>';
-		echo '</div>';
+// Content Builder ACF
+function content_acf() { 
+
+	// check if the flexible content field has rows of data
+	if( have_rows('content_builder') ):
+	
+		// loop through the rows of data
+		while ( have_rows('content_builder') ) : the_row();
+		
+			if( get_row_layout() == 'form' ) {
+				get_template_part('templates/acf/form');	
+			}
+
+			if( get_row_layout() == 'our_clients' ) {
+				get_template_part('templates/acf/our-clients');	
+			}
+
+			if( get_row_layout() == 'content_block' ) {
+				get_template_part('templates/acf/content-block');	
+			}
+									
+		endwhile;
+	
 	else :
 	
-		// no rows found
+		// no layouts found
 	
-	endif;
-	
+endif;
+
 }
+
+
+function homeBanner() { ?>
+
+<div id="hero" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+		<?php
+		$i = 0;
+		$i1 = 1;
+		if( have_rows('slides') ):
+		
+	    while ( have_rows('slides') ) : the_row(); ?>
+				<?php
+					$active = '';
+					if( $i == 0 ) {
+						$active = 'active';
+					}
+				?>
+		    <li data-target="#hero" data-slide-to="<?php echo $i; ?>" class="<?php echo $active; ?>">
+		    	<h4><span>0<?php echo $i1; ?></span> | <?php the_sub_field('slide_title'); ?></h4>
+		    </li>
+	
+	    <?php $i++; $i1++; endwhile; 
+		
+		else :
+		
+		  // no rows found
+		
+		endif;
+		
+		?>
+
+  </ol>
+  <div class="carousel-inner" role="listbox">
+		<?php
+		$slides = 0;
+		if( have_rows('slides') ):
+		
+	    while ( have_rows('slides') ) : the_row(); ?>
+				<?php
+					$active = '';
+					if( $slides == 0 ) {
+						$active = 'active';
+					}
+				?>
+		    <div class="carousel-item <?php echo $active; ?>">
+			    <div class="carousel-background" style="background-image: url(<?php the_sub_field('slide_image'); ?>);"></div>
+			    <div id="<?php the_sub_field('slide_title'); ?>" class="carousel-caption d-none d-md-block">
+				  	<h2><img class="icon" src="<?php the_sub_field('slide_icon'); ?>"/> <?php the_sub_field('slide_title'); ?></h2> 
+				  	<p><?php the_sub_field('slide_description'); ?></p>
+				  	<a href="<?php the_sub_field('slide_button_url'); ?>" class="btn btn-primary">
+					  	<?php the_sub_field('slide_button_text'); ?>
+				  	</a>
+			    </div>
+		      
+		    </div>
+	
+	    <?php $slides++; endwhile; 
+		
+		else :
+		
+		  // no rows found
+		
+		endif;
+		
+		?>
+
+  </div>
+</div>
+	
+	
+<?php }
